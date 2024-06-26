@@ -1,0 +1,29 @@
+*{
+box-sizing: border-box;
+margin:0;
+padding:0;
+color: white;
+font-family:'Times New Roman', Times, serif
+}
+
+body {
+min-height: 100vh;
+}
+
+header {
+height: 100px;
+width: 100vw;
+background-color:#757575 ;
+}
+
+main {
+height: calc(100vh - 150px);
+width: 100vw;
+background-color: #575757;
+}
+
+footer {
+height: 50px;
+width: 100vw;
+background-color: #757575;
+}
