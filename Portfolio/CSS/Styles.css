@@ -9,7 +9,7 @@ header {
   /* display: flex; */
   min-height: 20rem;
   height: 80vh;
-  width: calc(100vw - 2 rem);
+  width: calc 100vw;
   align-items: stretch;
   padding: 2rem 0;
   background-color: #bb8f1e;
