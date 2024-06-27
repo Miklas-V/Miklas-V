@@ -5,7 +5,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
@@ -20,31 +21,34 @@ html, body {
   z-index: -1;
 }
 
-#background-video {
+.background-video {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translate(-50%, -50%) rotate(180deg);
+  transform: translate(-50%, -50%);
   z-index: -1;
 }
 
-.content-container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
+.upside-down .background-video {
+  transform: translate(-50%, -50%) rotate(180deg);
 }
+
 
 header {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
   height: fit-content;
   width: 100%;
-  padding-top: 5rem;
-  flex-wrap: wrap;
+  padding-top: 2.5rem;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 nav {
@@ -56,6 +60,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  padding: 1rem 2rem 0rem 2rem;
+  /* up  right bottom left*/
 }
 
 nav ul {
@@ -68,7 +74,7 @@ nav ul {
   flex-wrap: wrap;
   width: fit-content;
   background-color: white;
-  border-radius: 100rem;
+  border-radius: 10rem;
   box-shadow: 0 0 0.5rem black;
   justify-content: center;
 }
@@ -80,11 +86,12 @@ a {
 
 .hero {
   display: flex;
-  flex-wrap: wrap;
-  height: fit-content;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0 1rem 2rem 1rem;
+  /* up  right bottom left*/
 }
 
 .row-group {
@@ -93,7 +100,6 @@ a {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1rem;
 }
 
 .column-group {
@@ -117,7 +123,7 @@ a {
   background-color: white;
   height: fit-content;
   border-radius: 2rem;
-  padding: 1rem;
+  /* padding: 1rem; */
   margin: 1rem;
   align-items: center;
   box-shadow: 0 0 0.5rem black;
@@ -126,37 +132,39 @@ a {
 }
 
 .introduction2 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   background-color: white;
   height: fit-content;
   border-radius: 2rem;
-  padding: 1rem;
   margin: 1rem;
   align-items: center;
   box-shadow: 0 0 0.5rem black;
   text-align: center;
-  width: 100%;
+  width: 75%;
 }
 
-#links {
+
+
+.links {
   padding-top: 3rem;
   align-items: center;
+  flex-basis: 60vw;
   /* justify-content: center; */
 }
 
-#links.introduction {
+.links.introduction {
   /* align-items: center; */
   /* justify-content: center; */
 }
 
 #cv-img {
-  width: 20rem;
-  height: 20rem;
+  width: 12rem;
+  height: 12rem;
 }
 
-#git-imgs {
-  width: 2rem;
-  height: 2rem;
+#git-img {
+  width: 9rem;
+  height: 9rem;
 }
 
 
@@ -180,21 +188,223 @@ a {
 }
 
 .img-portlarge {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 20rem;
+  max-height: 20rem;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#about {
+  display: flex;
+  /* flex-wrap: wrap; */
+  height: 100vh;
+  width: 100%;
+  flex-direction: row-reverse;
+  background-color: transparent;
+  align-items: space-between;
+  justify-content: center;
+}
+
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  width: 100vw;
+}
+
+#about .introduction2 {
+  max-width: cal(100 - 5rem);
+  line-height: 2.5rem;
+}
+
+#about .port-large {
+  display: flex;
+  max-width: 25vw;
+  max-height: 25vw;
+}
+
+#projects {
+  padding-top: 6rem;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+#projects .introduction2 {
+  width: fit-content;
+  text-align: center;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+  max-height: 80vh;
+  min-width: calc(100vw - 4rem);
+  padding: 4rem 0rem 0rem 2rem
+    /* up  right bottom left*/
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  min-height: 75vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gallery-item {
+
+  flex: calc(33.333% - 1rem);
+  display: flex;
+}
+
+.gallery-item img {
+  height: auto;
+  max-height: 20vh;
+  max-width: 20vh;
+  display: block;
+  border-radius: 10rem;
+  overflow: hidden;
+  box-shadow: 0 0 0.5rem black;
+}
+
+.project-desc {
+  display: flex;
+  font-size: 1.5rem;
+  background-color: white;
+  height: fit-content;
+  border-radius: 2rem;
+  margin: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0.5rem black;
+  
+}
+
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.upside-down .background-video {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+
+
+.contact-form {
+  max-width: calc(100vw - 4rem);
+  max-height: calc(100vh - 8rem);
+  padding: 2rem;
+  margin-top: 4rem;
+  background: white;
+  border-radius: 3rem;
+  box-shadow: 0 0 0.5rem black;
+}
+
+.contact-form label {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border: 0.1rem solid #000;
+  border-radius: 2rem;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  height: 10rem;
+}
+
+.contact-form .button-container {
+  text-align: center;
+}
+
+.contact-form button {
+  color: black;
+  border: 0.1rem solid #000;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 2rem;
+}
+
 
 @media (max-width: 768px) {
   nav ul {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .header {
-    padding:10rem
+    padding: 0;
+    min-height: 80vh;
   }
 
   .introduction {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .introduction2 {
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .column-group {
+    flex-basis: 45%;
+  }
+
+  .hero>.row-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   .port-large {
@@ -208,64 +418,22 @@ a {
   }
 
   .img-portlarge {
-    max-width: 15rem;
-    max-height: 15rem;
+    max-width: 9rem;
+    max-height: 9rem;
+  }
+
+  #cv-img {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  #git-img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  #about .introduction2 {
+    max-width: 50vw;
+    line-height: 1.4rem;
   }
 }
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-#about {
-  position: relative;
-  padding-top: 6rem;
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  background-color: transparent;
-}
-
-#about .about-video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-#about-background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-#projects {
-  padding-top: 6rem;
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  background-color: transparent;
-}
-
-#links {
-  padding-top: 6rem;
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  background-color: transparent;
-}
-
