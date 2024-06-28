@@ -1,12 +1,13 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto";
   margin: 0;
   padding: 0;
 }
 
 html,
 body {
+  scroll-behavior: smooth;
   height: 100%;
   width: 100%;
 }
@@ -17,6 +18,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   overflow: hidden;
   z-index: -1;
 }
@@ -36,58 +38,58 @@ body {
   transform: translate(-50%, -50%) rotate(180deg);
 }
 
+.box-shadow {
+  box-shadow: 0 0 0.5rem black;
+}
 
 header {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
-  height: fit-content;
   width: 100%;
-  padding-top: 2.5rem;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  padding-top: 5vh;
   z-index: 1;
-  width: 100%;
 }
 
 nav {
-  width: 100%;
   height: 2rem;
-  top: 0;
   position: fixed;
+  top: 0;
   z-index: 1000;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
   padding: 1rem 2rem 0rem 2rem;
   /* up  right bottom left*/
 }
 
 nav ul {
   display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
+  gap: 2rem;
+  padding: 1rem 2rem 1rem 2rem;
   list-style-type: none;
   color: black;
   font-size: 2rem;
-  flex-wrap: wrap;
   width: fit-content;
+  max-width: calc(fit-content + 2rem);
   background-color: white;
   border-radius: 10rem;
-  box-shadow: 0 0 0.5rem black;
-  justify-content: center;
 }
 
 a {
   text-decoration: none;
   color: #000;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10rem;
+  padding: 0.5rem;
+}
+
+a:hover {
+  background-color: black;
+  color: white;
+  z-index: -1;
+  border-radius: 10rem;
+  padding: 0.5rem;
 }
 
 .hero {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   width: 100%;
   padding: 0 1rem 2rem 1rem;
@@ -100,6 +102,7 @@ a {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding-right: 2rem;
 }
 
 .column-group {
@@ -114,59 +117,37 @@ a {
   color: #000;
   font-weight: bold;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem black;
   background-color: white;
+}
+
+.introduction,
+.introduction2 {
+  background-color: white;
+  height: fit-content;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
 }
 
 .introduction {
   font-size: 3rem;
-  background-color: white;
-  height: fit-content;
-  border-radius: 2rem;
-  /* padding: 1rem; */
-  margin: 1rem;
-  align-items: center;
-  box-shadow: 0 0 0.5rem black;
-  text-align: center;
   width: 100%;
 }
 
 .introduction2 {
   font-size: 1.5rem;
-  background-color: white;
-  height: fit-content;
-  border-radius: 2rem;
-  margin: 1rem;
-  align-items: center;
-  box-shadow: 0 0 0.5rem black;
-  text-align: center;
-  width: 75%;
+  line-height: 1.7rem;
+  width: 100%
 }
-
-
 
 .links {
-  padding-top: 3rem;
+  padding-top: 15vh;
+  padding-right: 2rem;
   align-items: center;
-  flex-basis: 60vw;
-  /* justify-content: center; */
+  justify-content: space-between;
+  flex-basis: 100%;
 }
-
-.links.introduction {
-  /* align-items: center; */
-  /* justify-content: center; */
-}
-
-#cv-img {
-  width: 12rem;
-  height: 12rem;
-}
-
-#git-img {
-  width: 9rem;
-  height: 9rem;
-}
-
 
 .port-large {
   display: flex;
@@ -180,11 +161,11 @@ a {
   max-width: 20rem;
   max-height: 20rem;
   border-radius: 100rem;
+  margin: 1rem;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   background-color: white;
-  box-shadow: 0 0 0.5rem black;
 }
 
 .img-portlarge {
@@ -210,24 +191,24 @@ main {
   justify-content: center;
 }
 
-
 .about-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items:center;
-  padding: 2rem;
+  align-items: center;
+  padding: 1rem;
   width: 100vw;
 }
 
 #about .introduction2 {
   max-width: cal(100vw - 8rem);
   line-height: 2.5rem;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 #about .port-large {
   display: flex;
+  padding: ;
   max-width: 25vw;
   max-height: 25vw;
 }
@@ -242,18 +223,16 @@ main {
 }
 
 #projects .introduction2 {
-  width: fit-content;
   text-align: center;
 }
 
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
   justify-content: left;
-  max-height: 80vh;
-  min-width: calc(100vw - 4rem);
-  padding: 4rem 0rem 0rem 2rem
+  max-height: calc(70vh - 4rem);
+  min-width: 80vw;
+  padding: 2rem 0rem 0rem 2rem
     /* up  right bottom left*/
 }
 
@@ -261,14 +240,12 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
-  min-height: 75vh;
   flex-direction: column;
   justify-content: center;
 }
 
 .gallery-item {
-
-  flex: calc(33.333% - 1rem);
+  flex: calc(33% - 1rem);
   display: flex;
 }
 
@@ -279,7 +256,6 @@ main {
   display: block;
   border-radius: 10rem;
   overflow: hidden;
-  box-shadow: 0 0 0.5rem black;
 }
 
 .project-desc {
@@ -293,8 +269,7 @@ main {
   text-align: center;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 0.5rem black;
-  
+
 }
 
 .video-container {
@@ -322,21 +297,19 @@ main {
   transform: translate(-50%, -50%) rotate(180deg);
 }
 
-
-
 .contact-form {
-  max-width: calc(100vw - 4rem);
-  max-height: calc(100vh - 8rem);
+  max-width: calc(80vw - 4rem);
+  height: fit-content;
+  max-height: 80vh;
+  margin: 2rem;
   padding: 2rem;
-  margin-top: 4rem;
+  margin-top: 10vh;
   background: white;
   border-radius: 3rem;
-  box-shadow: 0 0 0.5rem black;
 }
 
 .contact-form label {
   margin-bottom: 1rem;
-  font-weight: bold;
 }
 
 .contact-form input,
@@ -351,6 +324,9 @@ main {
 
 .contact-form textarea {
   height: 10rem;
+  max-height: 10vh;
+  width: 100%;
+  resize: none
 }
 
 .contact-form .button-container {
@@ -358,8 +334,6 @@ main {
 }
 
 .contact-form button {
-  color: black;
-  border: 0.1rem solid #000;
   padding: 1rem;
   text-align: center;
   text-decoration: none;
@@ -367,8 +341,7 @@ main {
   border-radius: 2rem;
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   nav ul {
     font-size: 1.3rem;
   }
@@ -421,16 +394,6 @@ main {
   .img-portlarge {
     max-width: 9rem;
     max-height: 9rem;
-  }
-
-  #cv-img {
-    width: 6rem;
-    height: 6rem;
-  }
-
-  #git-img {
-    width: 4.5rem;
-    height: 4.5rem;
   }
 
   #about .introduction2 {

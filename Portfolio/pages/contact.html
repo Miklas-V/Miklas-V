@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" type="text/css" href="../CSS/styles.css">
 </head>
 
 <body>
-  <div class="video-container upside-down">
+  <div class="video-container">
     <video autoplay muted loop id="background-video">
       <source src="../video/background1080.mp4" type="video/mp4">
       Sorry friend, your browser does not support the video tag!
@@ -17,14 +18,14 @@
   </div>
   <header>
     <nav>
-      <ul class="navlist">
+      <ul class="box-shadow">
         <li><a href="../Index.html">Home</a></li>
         <li><a href="../Index.html#about">About</a></li>
         <li><a href="../Index.html#projects">Projects</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-    <div class="contact-form">
+    <div class="contact-form box-shadow">
       <form action="mailto: place.holder@vogl.com" method="post" enctype="text/plain">
         <label for="first-name">First Name:</label>
         <input type="text" id="first-name" name="first-name" required>
@@ -36,9 +37,9 @@
         <input type="email" id="email" name="email" required>
   
         <label for="message">Write your message:</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea rows="5" cols="15" id="message" name="message" required></textarea>
   
-        <button type="submit">Send Message</button>
+        <button class="box-shadow" type="submit">Send Message</button>
       </form>
     </div>
     </header>
